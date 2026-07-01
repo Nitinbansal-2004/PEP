@@ -3,13 +3,10 @@ from collections import Counter
 text = input()
 k = int(input())
 words = text.split()
-ans = []
-visited = set()
 count = Counter(words)
+ans = []
 
-for i in words:
-    if i not in visited and count[i] >= k:
+for i in count:
+    if count[i] >= k:
         ans.append(i)
-        visited.add(i)
-
 print(ans)
